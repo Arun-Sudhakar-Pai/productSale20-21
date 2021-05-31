@@ -1,0 +1,39 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+</head>
+
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+		<script>
+var values = [
+      ['D-Cold','Dermicool','Dettol','Disprin','Durex','Enfagrow','Enfamil','Enfapro','Fybogen','Gaviscon','ItchGuard','K-Y','Krack','Moov','Ring Guard','Strepsils','Veet'],
+      [17, 0, 2504,13, 276, 19, 29, 9, 27, 39, 83, 21, 10, 210, 63, 104, 497],
+	  [25, 2, 3234,48, 554, 24, 37, 23, 31, 58, 65, 18, 15, 313, 45, 134, 651]]
+
+
+var data = [{
+  type: 'table',
+  header: {
+    values: [["<b>Product</b>"], ["<b>2020 Sale</b>"], ["<b>2021 Sale</b>"]],
+    align: ["left", "center"],
+    line: {width: 1, color: '#506784'},
+    fill: {color: '#119DFF'},
+    font: {family: "Arial", size: 12, color: "white"}
+  },
+  cells: {
+    values: values,
+    align: ["left", "center"],
+    line: {color: "#506784", width: 1},
+	 fill: {color: ['#25FEFD', 'white']},
+    font: {family: "Arial", size: 11, color: ["#506784"]}
+  }
+}]
+
+Plotly.newPlot('myDiv', data);
+
+</script>
+</body>
+
+
